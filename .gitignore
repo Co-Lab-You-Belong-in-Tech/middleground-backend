@@ -102,3 +102,7 @@ dist
 
 # TernJS port file
 .tern-port
+
+# ENV secrets files
+config.json
+media.json
