@@ -9,11 +9,6 @@ const cors = require("cors");
 const app = express();
 const PORT = process.env.PORT || 3500;
 
-const LEFT_OUTLETS = "bbc.co.uk";
-const CENTER_OUTLETS =
-  "apnews.com,reuters.com,axios.com,cbsnews.com,fortune.com";
-const RIGHT_OUTLETS = "bloomberg.com,thefiscaltimes.com,wsj.com";
-
 app.use(cors());
 
 app.get("/searchTerm", async function (req, res) {
@@ -51,6 +46,11 @@ async function indexingNewsSources() {
 
 async function querying(term, view, datefrom, dateto, order) {
   var domains;
+  const LEFT_OUTLETS = "bbc.co.uk";
+  const CENTER_OUTLETS =
+    "apnews.com,reuters.com,axios.com,cbsnews.com,fortune.com";
+  const RIGHT_OUTLETS = "bloomberg.com,thefiscaltimes.com,wsj.com";
+
   if (view === "center") {
     domains = CENTER_OUTLETS;
   } else if (view === "left") {
@@ -58,7 +58,7 @@ async function querying(term, view, datefrom, dateto, order) {
   } else {
     domains = RIGHT_OUTLETS;
   }
-  //console.log(term, view, datefrom, dateto, order);
+
   var response = await news.v2.everything({
     q: `${term}`,
     domains,
@@ -74,3 +74,5 @@ async function querying(term, view, datefrom, dateto, order) {
 app.listen(PORT, function () {
   console.log(`The server is online on ${PORT}. Press ctrl+c to kill it.`);
 });
+
+module.exports = { querying };

@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "mocha"
   },
   "keywords": [],
   "author": "",
@@ -15,5 +16,8 @@
     "express": "^4.17.1",
     "newsapi": "^2.4.1",
     "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "mocha": "^9.0.1"
   }
 }
