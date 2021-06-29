@@ -46,7 +46,8 @@ async function indexingNewsSources() {
 
 async function querying(term, view, datefrom, dateto, order) {
   var domains;
-  const LEFT_OUTLETS = "bbc.co.uk";
+  const LEFT_OUTLETS =
+    "bbc.co.uk,reuters.com,cbsnews.com,axios.com,nbcnews.com";
   const CENTER_OUTLETS =
     "apnews.com,reuters.com,axios.com,cbsnews.com,fortune.com";
   const RIGHT_OUTLETS = "bloomberg.com,thefiscaltimes.com,wsj.com";
