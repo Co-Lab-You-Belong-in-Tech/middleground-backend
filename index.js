@@ -39,7 +39,7 @@ async function querying(term, view, datefrom, dateto, order) {
     domains = RIGHT_OUTLETS;
   }
 
-  var response = await news.v2.topHeadlines({
+  var response = await news.v2.everything({
     q: `${term}`,
     domains,
     language: "en",
