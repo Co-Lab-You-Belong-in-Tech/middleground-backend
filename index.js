@@ -28,13 +28,16 @@ async function querying(term, view, datefrom, dateto, order) {
   var domains;
   const LEFT_OUTLETS =
     "bbc.co.uk,reuters.com,cbsnews.com,axios.com,nbcnews.com";
-  const CENTER_OUTLETS = "apnews.com,axios.com,fortune.com";
+  const CENTER_OUTLETS = "apnews.com,axios.com,fortune.com,aljazeera.com";
   const RIGHT_OUTLETS = "bloomberg.com,thefiscaltimes.com,wsj.com";
+  const ALL_OUTLETS = `${LEFT_OUTLETS},${RIGHT_OUTLETS},${CENTER_OUTLETS}`;
 
   if (view === "center") {
     domains = CENTER_OUTLETS;
   } else if (view === "left") {
     domains = LEFT_OUTLETS;
+  } else if (view === "all") {
+    domains = ALL_OUTLETS;
   } else {
     domains = RIGHT_OUTLETS;
   }
