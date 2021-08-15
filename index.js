@@ -1,7 +1,5 @@
 "use strict";
 require("dotenv").config();
-const { token } = process.env;
-const NewsAPI = require("newsapi");
 const express = require("express");
 const cors = require("cors");
 const newsapiRouter = require("./routers/newsapiRouter");
