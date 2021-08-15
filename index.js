@@ -5,7 +5,7 @@ const NewsAPI = require("newsapi");
 const express = require("express");
 const cors = require("cors");
 const newsapiRouter = require("./routers/newsapiRouter");
-const mediastackRouter = require("./routers/mediastackRouter");
+// const mediastackRouter = require("./routers/mediastackRouter");
 
 const app = express();
 const PORT = process.env.PORT || 3500;
