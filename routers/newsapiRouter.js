@@ -3,6 +3,9 @@ require("dotenv").config();
 const { newsapikey } = process.env;
 const NewsAPI = require("newsapi");
 const newsapiRouter = require("express").Router();
+const {
+  newsapiRouter: { CENTER_OUTLETS, LEFT_OUTLETS, RIGHT_OUTLETS },
+} = require("../data/news_orgs_grouped.json");
 
 const news = new NewsAPI(newsapikey);
 
@@ -21,9 +24,6 @@ newsapiRouter.get("/", async function (req, res, next) {
 });
 async function querying(term, view, datefrom, dateto, order) {
   var domains;
-  const LEFT_OUTLETS = "bbc.co.uk,reuters.com,cbsnews.com,nbcnews.com";
-  const CENTER_OUTLETS = "apnews.com,axios.com,fortune.com,aljazeera.com";
-  const RIGHT_OUTLETS = "bloomberg.com,thefiscaltimes.com,wsj.com";
   const ALL_OUTLETS = `${LEFT_OUTLETS},${RIGHT_OUTLETS},${CENTER_OUTLETS}`;
 
   if (view === "center") {
