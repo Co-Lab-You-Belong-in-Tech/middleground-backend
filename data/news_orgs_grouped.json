@@ -1,0 +1,12 @@
+{
+  "newsapiRouter": {
+    "LEFT_OUTLETS": "bbc.co.uk,reuters.com,cbsnews.com,nbcnews.com",
+    "RIGHT_OUTLETS": "bloomberg.com,thefiscaltimes.com,wsj.com",
+    "CENTER_OUTLETS": "apnews.com,axios.com,fortune.com,aljazeera.com"
+  },
+  "mediaStackRouter": {
+    "LEFT_OUTLETS": "bbc,reuters,cbsnews,nbcnews",
+    "RIGHT_OUTLETS": "bloomberg,thefiscaltimes,wsj",
+    "CENTER_OUTLETS": "apnews,axios,fortune,aljazeera"
+  }
+}
